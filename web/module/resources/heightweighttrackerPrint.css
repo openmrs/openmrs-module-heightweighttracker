@@ -1,0 +1,102 @@
+@media print{@page {size: landscape}}
+
+* { margin:0px; padding: 0px; font-size: 10px; font-family: Times; }
+
+sup { font-size: 6px; }
+
+td, th {
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+div#header	{ display: none; 	}
+div#footer	{ display: none; 	}
+div#content	{ padding: 1px; 	}
+		
+.value-label	{ font-weight: bold; }
+.value-data 	{ 
+				  font-family: ‘Lucida Console’, Monaco, monospace;
+				  font-size: 11px;
+				  color: #003366;
+				}
+.value-calculated 	{ 
+				  font-family: ‘Lucida Console’, Monaco, monospace;
+				  font-size: 11px;
+				  color: #5B1094;
+				}
+.value-date 	{ font-family: ‘Lucida Console’, Monaco, monospace;
+				  font-size: 11px;
+				  color: #003366;
+				 }
+
+.form-header {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.section-table {
+	width: 100%;
+	margin-bottom: 10px;
+	border: 1px solid black;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+.section-graph {
+	margin-bottom: 10px;
+}
+	
+table.section-table th	{ background-color: #eeeeee; border: 1px solid black; }
+table.section-table td	{ border: 1px solid black; }
+
+td.section-emr	{ text-align: center; 	}
+
+#col-visits-1 { font-weight: normal; text-align: center; width: 1%; background-color: #FFFFFF; }
+#col-visits-2 { font-weight: normal; text-align: left; width: 10%; background-color: #FFFFFF; }
+#col-visits-3 { font-weight: normal; text-align: left; width: 8%; background-color: #FFFFFF; }
+#col-visits-4 { font-weight: normal; text-align: left; width: 9%; background-color: #FFFFFF; }
+#col-visits-5 { font-weight: normal; text-align: left; width: 9%; background-color: #FFFFFF; }
+#col-visits-6 { font-weight: normal; text-align: left; width: 9%; background-color: #FFFFFF; }
+#col-visits-7 { font-weight: normal; text-align: left; width: 9%; background-color: #FFFFFF; }
+#col-visits-8 { font-weight: normal; text-align: left; width: 9%; background-color: #FFFFFF; }
+#col-visits-9 { font-weight: normal; text-align: left; width: 9%; background-color: #FFFFFF; }
+
+.tickLabel { font-size: 8px; }
+
+.heightForAge {	width: 900px; height: 600px; margin: 10px; }
+.lengthForAge {	width: 900px; height: 600px; margin: 10px; }
+.weightForAgeBirth {	width: 900px; height: 600px; margin: 10px; }
+.weightForAge {	width: 900px; height: 600px; margin: 10px; }
+.bmiForAge {	width: 900px; height: 600px; margin: 10px; }
+.heightForAgeTotal {	width: 900px; height: 600px; margin: 10px; }
+.bmiGraph {	width: 720px; height: 540px; }
+.weightForLength {	width: 900px; height: 600px; }
+.weightForHeight {	width: 900px; height: 600px; }
+
+.graphs h1 { font-size: 20px; }
+
+.new-item-button-row { display: none; }
+
+.view-row { display: none; }
+
+table { page-break-inside: avoid; }
+
+
+.ui-tabs-nav {
+	display: none;
+}
+
+table.bmiLegend th, table.bmiLegend td {
+  font-size: 5px;
+  padding: 0px;
+  text-align: center;
+}
+
+table.bmiLegend th {
+  background: #C5DBEC;
+ }
+
+

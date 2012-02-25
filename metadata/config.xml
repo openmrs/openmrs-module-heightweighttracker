@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//OpenMRS//DTD OpenMRS Config 1.3//EN" "../lib-common/config-1.3.dtd">
+<!--  <!DOCTYPE module PUBLIC "-//OpenMRS//DTD OpenMRS Config 1.3//EN" "http://resources.openmrs.org/doctype/config-1.3.dtd"> -->
+<module configVersion="1.3">
+	
+	<id>heightweighttracker</id>
+	<name>Height Weight tracker</name>
+	<version>0.0.1</version>
+	<package>org.openmrs.module.@MODULE_ID@</package>
+	<author>Partners in Health</author>
+	<description>
+		Child growth tracker
+	</description>
+	<activator>@MODULE_PACKAGE@.HeightWeightTrackerModuleActivator</activator>
+	
+	<require_version>1.6.1.12909</require_version>
+
+	<require_modules>
+	   		<require_module>org.openmrs.module.htmlformentry</require_module>
+	</require_modules>
+	
+	 <extension>
+		<point>org.openmrs.patientDashboard.patientSummary</point>
+		<class>@MODULE_PACKAGE@.extension.html.HeightWeightTrackerFormItem</class>
+	</extension>
+	
+	<globalProperty>
+		<property>heightweighttracker.constants</property>
+		<defaultValue>
+HEIGHT_CM = 3ce93cf2-26fe-102b-80cb-0017a47871b2
+WEIGHT_KG = 3ce93b62-26fe-102b-80cb-0017a47871b2
+Z_SCORE_WEIGHT = c9d8c9db-518c-4a00-985d-d2fc8ac1f739
+Z_SCORE_HEIGHT = 6d4b1720-f45c-4069-98d9-e7e865105a7a
+Z-SCORE_BMI = 2137
+HEIGHT_WEIGHT_PERCENTILE = 2438e295-d9da-4d5c-bacc-13c313e34755
+GROWTH_ENCOUNTER = 21
+BMI = 2137
+PatientIdentiferId_IMB = 5
+PatientIdentiferId_PC = 8
+</defaultValue>
+		<description>
+			paste in a properties text file containing key, and local ID for objects.  For more explanation,
+			see the ConceptDictionary class of this module.
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>heightweighttracker.Form_New</property>
+		<defaultValue>ab35557d-b558-4c19-90d4-dbde7260c5b8</defaultValue>
+		<description>
+			form ID for new visits
+		</description>
+	</globalProperty>
+	<globalProperty>
+		<property>heightweighttracker.DisplayLink</property>
+		<defaultValue>true</defaultValue>
+		<description>
+			If true the link will be displayed on the patient dashboard
+		</description>
+	</globalProperty>
+	
+	<!--  Message Properties -->
+	<messages>
+		<lang>en</lang>
+		<file>messages.properties</file>
+	</messages>
+	
+</module>
