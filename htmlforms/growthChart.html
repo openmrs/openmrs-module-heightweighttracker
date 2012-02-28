@@ -9,16 +9,13 @@
 		@Z_SCORE_HEIGHT@=6975
 		@Z_SCORE_WEIGHT@=6385
 		@WEIGHT_FOR_HEIGHT@=6977
-		@BMI_FOR_AGE@=2137
+		@BMI_FOR_AGE@=7326
 		@BMI@=2137
     </macros>
 
 	
 	<link type="text/css" rel="stylesheet" href="/openmrs/moduleResources/childgrowthtracker/hiv_flowsheet_new_row.css" />
 
-	<script type="text/javascript" src="../../scripts/jquery/jquery-1.3.2.min.js"></script>
-	
-	
 	<table border="2" cellspacing="0" cellpadding="6" width="100%">
 		<tr>
 			<td>
@@ -126,8 +123,8 @@
 			
 	<br />
 	<center><submit /></center>
+	<encounterVoided/>
 	<br />
-	<input id="w66" type="text"/>
 	<span style="display: none"> 
 	<lookup expression="patient.birthdate" class="birthdate" id="birthdate"/>
 	<lookup expression="patient.gender" class="gender" id="gender"/>
@@ -136,46 +133,31 @@
 <script type="text/javascript">
 $j(document).ready(function() {
 	
-	$('.heightForAge').hide();
-	$('.weightForAge').hide();
-	$('.heightWeight').hide();
-	$('.bmiForAge').hide();
-	$('.bmi').hide();
-	$('.lastWeight').hide();
-	
-	$('#w1').change(function() {
-		alert("here");	
-	});
-	
-	$('#w66').change(function() {
-		alert("here2");
-		
-	});
-	
-	getField('encounter.value').change(function() {
-		alert("here3");
-	});
+	$j('.heightForAge').hide();
+	$j('.weightForAge').hide();
+	$j('.heightWeight').hide();
+	$j('.bmiForAge').hide();
+	$j('.bmi').hide();
+	$j('.lastWeight').hide();
 	
 	var lastHeight = "<lookup expression="fn.latestObs($@HEIGHT_CM@).valueNumeric"/>";
 	var lastHeightDate = "<lookup expression="fn.latestObs($@HEIGHT_CM@).obsDatetime"/>";
 	
-	var birthDate = $('.birthdate').text();
-	var date = $('#w1').val();
+	var birthDate = $j('.birthdate').text();
+	var date = getValue('encounter.value');
 	
 	var months = monthDiff(birthDate, date);
 	
 	if(months &gt; 228)
 	{
-		$('.lastWeight').show();
+		$j('.lastWeight').show();
 	}
 	
 	getField('height.value').change(function() {
-		var patientId = $('[name=personId]').val();
-		var gender = $('.gender').text();
+		var patientId = $j('[name=personId]').val();
+		var gender = $j('.gender').text();
 		
 		var length = getValue("height.value");
-		alert("HeightChangeMonths" + months);
-		alert("w2" + $('#w1'));
 		
 		if(date != null)
 		{ 
@@ -185,8 +167,8 @@ $j(document).ready(function() {
 				var zscore = calculateZScoreLength(gender, months, length);
 				
 				setValue('heightForAge.value', zscore);
-				$('.zscoreHeight').html(zscore);
-				$('.heightForAge').show();
+				$j('.zscoreHeight').html(zscore);
+				$j('.heightForAge').show();
 			}
 			
 			if(months &lt; 25)
@@ -197,8 +179,8 @@ $j(document).ready(function() {
 					var percentage = calculateLengthWeightPercent(gender, length, weight);
 					
 					setValue('heightWeightPercent.value', percentage);
-					$('.heightWeightPercentage').html(percentage);
-					$('.heightWeight').show();
+					$j('.heightWeightPercentage').html(percentage);
+					$j('.heightWeight').show();
 				}
 			}
 			if(months &gt; 24 &amp;&amp; months &lt; 61)
@@ -209,8 +191,8 @@ $j(document).ready(function() {
 					var percentage = calculateHeightWeightPercent(gender, length, weight);
 					
 					setValue('heightWeightPercent.value', percentage);
-					$('.heightWeightPercentage').html(percentage);
-					$('.heightWeight').show();
+					$j('.heightWeightPercentage').html(percentage);
+					$j('.heightWeight').show();
 				}
 			}
 			if(months &gt; 60 &amp;&amp; months &lt; 229)
@@ -221,8 +203,8 @@ $j(document).ready(function() {
 					var bmiAge = calculateZScoreBMI(gender, months, weight, length);
 					
 					setValue('bmiForAgeZ.value',bmiAge);
-					$('.bmiForAgeZScore').html(bmiAge);
-					$('.bmiForAge').show();
+					$j('.bmiForAgeZScore').html(bmiAge);
+					$j('.bmiForAge').show();
 				}
 			}
 			if(months &gt; 228)
@@ -233,8 +215,8 @@ $j(document).ready(function() {
 					var bmi = calculateBMI(length, weight);
 					
 					setValue('bmiVal.value', bmi);
-					$('.bmiValue').html(bmi);
-					$('.bmi').show();
+					$j('.bmiValue').html(bmi);
+					$j('.bmi').show();
 				}
 				else if (weight != null &amp;&amp; lastHeight != null)
 				{
@@ -244,8 +226,8 @@ $j(document).ready(function() {
 						var bmi = calculateBMI(lastHeight, weight);
 						
 						setValue('bmiVal.value', bmi);
-						$('.bmiValue').html(bmi);
-						$('.bmi').show();	
+						$j('.bmiValue').html(bmi);
+						$j('.bmi').show();	
 					}
 				}
 			}
@@ -253,10 +235,9 @@ $j(document).ready(function() {
 	});
 	
 	getField('weight.value').change(function() {
-		var patientId = $('[name=personId]').val();
+		var patientId = $j('[name=personId]').val();
 		
-		var gender = $('.gender').text();
-		alert("WeightChangeMonths" + months);
+		var gender = $j('.gender').text();
 		var weight = getValue("weight.value");
 		
 		if(date != null)
@@ -266,8 +247,8 @@ $j(document).ready(function() {
 				var zscore = calculateZScoreWeight(gender, months, weight);
 				
 				setValue('weightForAge.value', zscore);
-				$('.zscoreWeight').html(zscore);
-				$('.weightForAge').show();
+				$j('.zscoreWeight').html(zscore);
+				$j('.weightForAge').show();
 			}
 			
 			if(months &lt; 25)
@@ -278,8 +259,8 @@ $j(document).ready(function() {
 					var percentage = calculateLengthWeightPercent(gender, length, weight);
 					
 					setValue('heightWeightPercent.value', percentage);
-					$('.heightWeightPercentage').html(percentage);
-					$('.heightWeight').show();
+					$j('.heightWeightPercentage').html(percentage);
+					$j('.heightWeight').show();
 				}
 			}
 			if(months &gt; 24 &amp;&amp; months &lt; 61)
@@ -290,8 +271,8 @@ $j(document).ready(function() {
 					var percentage = calculateHeightWeightPercent(gender, length, weight);
 					
 					setValue('heightWeightPercent.value', percentage);
-					$('.heightWeightPercentage').html(percentage);
-					$('.heightWeight').show();
+					$j('.heightWeightPercentage').html(percentage);
+					$j('.heightWeight').show();
 				}
 			}
 			if(months &gt; 60 &amp;&amp; months &lt; 229)
@@ -301,9 +282,9 @@ $j(document).ready(function() {
 				{
 					var bmiAge = calculateZScoreBMI(gender, months, weight, length);
 					
-					setValue('bmiForAgeZ.value', percentage);
-					$('.bmiForAgeZScore').html(percentage);
-					$('.bmiForAge').show();
+					setValue('bmiForAgeZ.value', bmiAge);
+					$j('.bmiForAgeZScore').html(bmiAge);
+					$j('.bmiForAge').show();
 				}
 			}
 			if(months &gt; 228)
@@ -314,8 +295,8 @@ $j(document).ready(function() {
 					var bmi = calculateBMI(length, weight);
 					
 					setValue('bmiVal.value', bmi);
-					$('.bmiValue').html(bmi);
-					$('.bmi').show();
+					$j('.bmiValue').html(bmi);
+					$j('.bmi').show();
 				}
 				else if (weight != null &amp;&amp; lastHeight != null)
 				{
@@ -325,12 +306,109 @@ $j(document).ready(function() {
 						var bmi = calculateBMI(lastHeight, weight);
 						
 						setValue('bmiVal.value', bmi);
-						$('.bmiValue').html(bmi);
-						$('.bmi').show();	
+						$j('.bmiValue').html(bmi);
+						$j('.bmi').show();	
 					}
 				}
 			}
 		}
+		
+		getField('encounter.value').change(function() {
+			
+			var patientId = $j('[name=personId]').val();
+			
+			var gender = $j('.gender').text();
+			
+			date = getValue("encounter.value");
+			var length = getValue("height.value");
+			var weight = getValue("weight.value");
+			
+			
+			months = monthDiff(birthDate, date);
+			if(months &lt; 229)
+			{
+				$j('.lastWeight').hide();
+			}
+			
+			if(length != null &amp;&amp; length &gt; 0)
+			{ 
+				var zscore = calculateZScoreLength(gender, months, length);
+				setValue('heightForAge.value', zscore);
+				$j('.zscoreHeight').html(zscore);
+				$j('.heightForAge').show();
+			}
+			
+			if(weight != null &amp;&amp; weight &gt; 0)
+			{ 
+				var zscore = calculateZScoreWeight(gender, months, weight);
+				
+				setValue('weightForAge.value', zscore);
+				$j('.zscoreWeight').html(zscore);
+				$j('.weightForAge').show();
+				
+				if(months &gt; 228)
+				{
+					var length = getValue("height.value");
+					if(length != null)
+					{
+						var bmi = calculateBMI(length, weight);
+						
+						setValue('bmiVal.value', bmi);
+						$j('.bmiValue').html(bmi);
+						$j('.bmi').show();
+					}
+					else if (lastHeight != null)
+					{
+						var monthsLastHeight = monthDiff(lastHeightDate, date);
+						if(monthsLastHeight &gt; 228)
+						{
+							var bmi = calculateBMI(lastHeight, weight);
+							
+							setValue('bmiVal.value', bmi);
+							$j('.bmiValue').html(bmi);
+							$j('.bmi').show();	
+						}
+					}
+				}
+			}
+			
+			if(weight != null &amp;&amp; length != null)
+			{
+				if(months &lt; 25)
+				{
+					if(length != null &amp;&amp; length &gt; 45 &amp;&amp; height &lt; 110)
+					{
+						var percentage = calculateLengthWeightPercent(gender, height, weight);
+						
+						setValue('heightWeightPercent.value', percentage);
+						$j('.heightWeightPercentage').html(percentage);
+						$j('.heightWeight').show();
+					}
+				}
+				if(months &gt; 24 &amp;&amp; months &lt; 61)
+				{
+					if(length != null &amp;&amp; length &gt; 65 &amp;&amp; height &lt; 120)
+					{
+						var percentage = calculateHeightWeightPercent(gender, height, weight);
+						
+						setValue('heightWeightPercent.value', percentage);
+						$j('.heightWeightPercentage').html(percentage);
+						$j('.heightWeight').show();
+					}
+				}
+				if(months &gt; 60 &amp;&amp; months &lt; 229)
+				{
+					if(length != null &amp;&amp; weight != null)
+					{
+						var bmiAge = calculateZScoreBMI(gender, months, weight, length);
+						
+						setValue('bmiForAgeZ.value', bmiAge);
+						$j('.bmiForAgeZScore').html(bmiAge);
+						$j('.bmiForAge').show();
+					}
+				}
+			}
+		});
 	});
 	
 	
@@ -341,7 +419,8 @@ $j(document).ready(function() {
 	    var d1 = new Date();
 	    d1.setTime(Date.parse(date1));
 	    
-	    var d2 = new Date(date2.substring(6,10), (date2.substring(3,5) - 1), date2.substring(0,2));
+	    var d2 = new Date();
+	    d2.setTime(Date.parse(date2));
 	   
 	    months = (d2.getFullYear() - d1.getFullYear()) * 12;
 	    if(d2.getMonth() > d1.getMonth())
@@ -362,7 +441,6 @@ $j(document).ready(function() {
 
 	function calculateZScoreLength(gender, months, length) {
 		
-		alert("months" + months);
 		var zscore = 0;
 		
 		if(gender == "F")
@@ -381,7 +459,6 @@ $j(document).ready(function() {
 	
 	function calculateLengthWeightPercent(gender, length, weight) {
 		
-		alert("In function");
 		var percent = 0;
 		
 		var lengthIndex = length*10 - 450;

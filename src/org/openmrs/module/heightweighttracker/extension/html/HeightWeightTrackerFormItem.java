@@ -21,7 +21,7 @@ public class HeightWeightTrackerFormItem extends LinkExt {
 			return "Height/Weight charts";
 		}
 		
-		return null;
+		return "";
 	}
 	
 	/**

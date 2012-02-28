@@ -994,7 +994,7 @@
 						    		  <c:otherwise><span class="value-calculated"><c:out value="${visitRow.calculatedHeightWeightPercentile}"/></span></c:otherwise>
 						    </c:choose>
 						</td>
-						<td><c:choose><c:when test="${visitRow.ZScoreBmi != null}"><span class="value-data"><openmrs:format obsValue="${visitRow.bmiForAge}"/></span></c:when>
+						<td><c:choose><c:when test="${visitRow.ZScoreBmi != null}"><span class="value-data"><openmrs:format obsValue="${visitRow.ZScoreBmi}"/></span></c:when>
 						    		  <c:otherwise><span class="value-calculated"><c:out value="${visitRow.calculatedBmiForAge}"/></span></c:otherwise>
 						    </c:choose>
 						</td>

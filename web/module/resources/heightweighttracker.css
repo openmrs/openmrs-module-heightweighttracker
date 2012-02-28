@@ -64,11 +64,11 @@ td.section-emr	{ text-align: center; display: none;	}
 .lengthForAge {	width: 900px; height: 600px; }
 .weightForAgeBirth {	width: 900px; height: 600px; }
 .weightForAge {	width: 900px; height: 600px; }
-.bmiForAge {	width: 900px; height: 600px; }
 .heightForAgeTotal {	width: 900px; height: 600px; }
 .bmiGraph {	width: 720px; height: 540px; }
 .weightForLength {	width: 900px; height: 600px; }
 .weightForHeight {	width: 900px; height: 600px; }
+.bmiForAge {	width: 900px; height: 600px; }
 
 
 .note {	color: red; }

@@ -70,11 +70,11 @@ td.section-emr	{ text-align: center; 	}
 .lengthForAge {	width: 900px; height: 600px; margin: 10px; }
 .weightForAgeBirth {	width: 900px; height: 600px; margin: 10px; }
 .weightForAge {	width: 900px; height: 600px; margin: 10px; }
-.bmiForAge {	width: 900px; height: 600px; margin: 10px; }
 .heightForAgeTotal {	width: 900px; height: 600px; margin: 10px; }
 .bmiGraph {	width: 720px; height: 540px; }
 .weightForLength {	width: 900px; height: 600px; }
 .weightForHeight {	width: 900px; height: 600px; }
+.bmiForAge {	width: 900px; height: 600px; margin: 10px; }
 
 .graphs h1 { font-size: 20px; }
 

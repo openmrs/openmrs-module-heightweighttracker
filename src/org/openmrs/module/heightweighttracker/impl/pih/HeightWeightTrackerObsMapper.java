@@ -286,7 +286,7 @@ public class HeightWeightTrackerObsMapper {
 	}
     
     public Collection<VisitGroup> getVisitsPedi() {
-    	Integer[] conceptIds = { ConceptDictionary.WEIGHT_KG, ConceptDictionary.HEIGHT_WEIGHT_PERCENTILE,  ConceptDictionary.HEIGHT_CM, ConceptDictionary.Z_SCORE_HEIGHT, ConceptDictionary.Z_SCORE_WEIGHT };
+    	Integer[] conceptIds = { ConceptDictionary.WEIGHT_KG, ConceptDictionary.HEIGHT_WEIGHT_PERCENTILE,  ConceptDictionary.HEIGHT_CM, ConceptDictionary.Z_SCORE_HEIGHT, ConceptDictionary.Z_SCORE_WEIGHT, ConceptDictionary.Z_SCORE_BMI, ConceptDictionary.BMI };
 
 		Collection<VisitMapping> set = getObsView(conceptIds, VisitMapping.class);
 
@@ -313,7 +313,7 @@ public class HeightWeightTrackerObsMapper {
     	
     	for(VisitGroup visit: allVisits)
     	{
-    		if(visit.getDate() != null && (visit.getDate().after(oneYearAgo.getTime()) || i < 5))
+    		if(visit.getDate() != null && (visit.getDate().after(oneYearAgo.getTime()) || i < 10))
     		{
     			lastVisits.add(visit);
     		}
