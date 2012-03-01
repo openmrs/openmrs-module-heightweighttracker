@@ -49,7 +49,7 @@
 				</td>
 				<th>Taille /<br/>Height (cm)</th>
 				<td>
-					<obs conceptId="$@HEIGHT_CM@" id="height"/> <span class="lastHeight">Last Weight: <lookup expression="fn.latestObs($@HEIGHT_CM@).valueNumeric"/> Date: <lookup expression="fn.latestObs($@HEIGHT_CM@).obsDatetime"/></span>
+					<obs conceptId="$@HEIGHT_CM@" id="height"/> <span class="lastHeight">Last Height: <lookup expression="fn.latestObs($@HEIGHT_CM@).valueNumeric"/> Date: <lookup expression="fn.latestObs($@HEIGHT_CM@).obsDatetime"/></span>
 				</td>
 			</tr>
 		</table>
@@ -172,7 +172,7 @@ $j(document).ready(function() {
 			if(months &lt; 25)
 			{
 				var weight = getValue("weight.value");
-				if(length != null &amp;&amp; length &gt; 45 &amp;&amp; height &lt; 110)
+				if(length != null &amp;&amp; length &gt; 45 &amp;&amp; length &lt; 110)
 				{
 					var percentage = calculateLengthWeightPercent(gender, length, weight);
 					
@@ -184,7 +184,7 @@ $j(document).ready(function() {
 			if(months &gt; 24 &amp;&amp; months &lt; 61)
 			{
 				var weight = getValue("weight.value");
-				if(length != null &amp;&amp; length &gt; 65 &amp;&amp; height &lt; 120)
+				if(length != null &amp;&amp; length &gt; 65 &amp;&amp; length &lt; 120)
 				{
 					var percentage = calculateHeightWeightPercent(gender, length, weight);
 					
@@ -218,8 +218,8 @@ $j(document).ready(function() {
 				}
 				else if (weight != null &amp;&amp; lastHeight != null)
 				{
-					var monthsLastWeight = monthDiff(lastHeightDate, date);
-					if(monthsLastWeight &gt; 228)
+					var monthsLastHeight = monthDiff(lastHeightDate, birthDate);
+					if(monthsLastHeight &gt; 228)
 					{
 						var bmi = calculateBMI(lastHeight, weight);
 						
@@ -298,7 +298,7 @@ $j(document).ready(function() {
 				}
 				else if (weight != null &amp;&amp; lastHeight != null)
 				{
-					var monthsLastHeight = monthDiff(lastHeightDate, date);
+					var monthsLastHeight = monthDiff(lastHeightDate, birthDate);
 					if(monthsLastHeight &gt; 228)
 					{
 						var bmi = calculateBMI(lastHeight, weight);
@@ -325,24 +325,28 @@ $j(document).ready(function() {
 			months = monthDiff(birthDate, date);
 			if(months &lt; 229)
 			{
-				$j('.lastWeight').hide();
+				$j('.lastHeight').hide();
+				
+				if(length != null &amp;&amp; length &gt; 0)
+				{ 
+					var zscore = calculateZScoreLength(gender, months, length);
+					setValue('heightForAge.value', zscore);
+					$j('.zscoreHeight').html(zscore);
+					$j('.heightForAge').show();
+				}
 			}
 			
-			if(length != null &amp;&amp; length &gt; 0)
-			{ 
-				var zscore = calculateZScoreLength(gender, months, length);
-				setValue('heightForAge.value', zscore);
-				$j('.zscoreHeight').html(zscore);
-				$j('.heightForAge').show();
-			}
-			
+		
 			if(weight != null &amp;&amp; weight &gt; 0)
 			{ 
-				var zscore = calculateZScoreWeight(gender, months, weight);
-				
-				setValue('weightForAge.value', zscore);
-				$j('.zscoreWeight').html(zscore);
-				$j('.weightForAge').show();
+				if(months &lt; 121)
+				{
+					var zscore = calculateZScoreWeight(gender, months, weight);
+					
+					setValue('weightForAge.value', zscore);
+					$j('.zscoreWeight').html(zscore);
+					$j('.weightForAge').show();
+				}
 				
 				if(months &gt; 228)
 				{
@@ -357,7 +361,7 @@ $j(document).ready(function() {
 					}
 					else if (lastHeight != null)
 					{
-						var monthsLastHeight = monthDiff(lastHeightDate, date);
+						var monthsLastHeight = monthDiff(lastHeightDate, birthDate);
 						if(monthsLastHeight &gt; 228)
 						{
 							var bmi = calculateBMI(lastHeight, weight);
