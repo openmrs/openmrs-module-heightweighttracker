@@ -95,6 +95,13 @@ public class WHOMapping {
 	private List<WeightForHeight> weightForHeightGirlsSD1neg= new ArrayList<WeightForHeight>();
 	private List<WeightForHeight> weightForHeightGirlsSD2neg= new ArrayList<WeightForHeight>();
 	private List<WeightForHeight> weightForHeightGirlsSD3neg= new ArrayList<WeightForHeight>();
+	private Map<Double, Double> weightForHeightGirlsSD3Map = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForHeightGirlsSD2Map = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForHeightGirlsSD1Map = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForHeightGirlsSD0Map = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForHeightGirlsSD1negMap = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForHeightGirlsSD2negMap = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForHeightGirlsSD3negMap = new HashMap<Double, Double>();
 	private Map<Double, Double> weightForHeightGirlsIdeal= new HashMap<Double, Double>();
 	
 	private List<WeightForHeight> weightForHeightBoysSD3= new ArrayList<WeightForHeight>();
@@ -104,6 +111,12 @@ public class WHOMapping {
 	private List<WeightForHeight> weightForHeightBoysSD1neg= new ArrayList<WeightForHeight>();
 	private List<WeightForHeight> weightForHeightBoysSD2neg= new ArrayList<WeightForHeight>();
 	private List<WeightForHeight> weightForHeightBoysSD3neg= new ArrayList<WeightForHeight>();
+	private Map<Double, Double> weightForHeightBoysSD3Map = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForHeightBoysSD2Map = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForHeightBoysSD1Map = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForHeightBoysSD1negMap = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForHeightBoysSD2negMap = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForHeightBoysSD3negMap = new HashMap<Double, Double>();
 	private Map<Double, Double> weightForHeightBoysIdeal= new HashMap<Double, Double>();
 	
 	private List<WeightForHeight> weightForLengthBoysSD3= new ArrayList<WeightForHeight>();
@@ -113,6 +126,12 @@ public class WHOMapping {
 	private List<WeightForHeight> weightForLengthBoysSD1neg= new ArrayList<WeightForHeight>();
 	private List<WeightForHeight> weightForLengthBoysSD2neg= new ArrayList<WeightForHeight>();
 	private List<WeightForHeight> weightForLengthBoysSD3neg= new ArrayList<WeightForHeight>();
+	private Map<Double, Double> weightForLengthBoysSD3Map = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForLengthBoysSD2Map = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForLengthBoysSD1Map = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForLengthBoysSD1negMap = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForLengthBoysSD2negMap = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForLengthBoysSD3negMap = new HashMap<Double, Double>();
 	private Map<Double, Double> weightForLengthBoysIdeal= new HashMap<Double, Double>();
 	
 	private List<WeightForHeight> weightForLengthGirlsSD3= new ArrayList<WeightForHeight>();
@@ -122,6 +141,12 @@ public class WHOMapping {
 	private List<WeightForHeight> weightForLengthGirlsSD1neg= new ArrayList<WeightForHeight>();
 	private List<WeightForHeight> weightForLengthGirlsSD2neg= new ArrayList<WeightForHeight>();
 	private List<WeightForHeight> weightForLengthGirlsSD3neg= new ArrayList<WeightForHeight>();
+	private Map<Double, Double> weightForLengthGirlsSD3Map = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForLengthGirlsSD2Map = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForLengthGirlsSD1Map = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForLengthGirlsSD1negMap = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForLengthGirlsSD2negMap = new HashMap<Double, Double>();
+	private Map<Double, Double> weightForLengthGirlsSD3negMap = new HashMap<Double, Double>();
 	private Map<Double, Double> weightForLengthGirlsIdeal= new HashMap<Double, Double>();
 	
 	private List<BMIForAge> bmiZScoreGirlsSD3= new ArrayList<BMIForAge>();
@@ -653,18 +678,21 @@ public class WHOMapping {
 			wfhSD3Neg.setHeight(height);
 			wfhSD3Neg.setWeight(Double.parseDouble(results[i]));
 			weightForHeightGirlsSD3neg.add(wfhSD3Neg);
+			weightForHeightGirlsSD3negMap.put(height, Double.parseDouble(results[i]));
 			i++;
 			
 			WeightForHeight wfhSD2Neg = new WeightForHeight();
 			wfhSD2Neg.setHeight(height);
 			wfhSD2Neg.setWeight(Double.parseDouble(results[i]));
 			weightForHeightGirlsSD2neg.add(wfhSD2Neg);
+			weightForHeightGirlsSD2negMap.put(height, Double.parseDouble(results[i]));
 			i++;
 			
 			WeightForHeight wfhSD1Neg = new WeightForHeight();
 			wfhSD1Neg.setHeight(height);
 			wfhSD1Neg.setWeight(Double.parseDouble(results[i]));
 			weightForHeightGirlsSD1neg.add(wfhSD1Neg);
+			weightForHeightGirlsSD1negMap.put(height, Double.parseDouble(results[i]));
 			
 			i++;
 			WeightForHeight wfhSD0 = new WeightForHeight();
@@ -678,18 +706,21 @@ public class WHOMapping {
 			wfhSD1.setHeight(height);
 			wfhSD1.setWeight(Double.parseDouble(results[i]));
 			weightForHeightGirlsSD1.add(wfhSD1);
+			weightForHeightGirlsSD1Map.put(height, Double.parseDouble(results[i]));
 	
 			i++;
 			WeightForHeight wfhSD2 = new WeightForHeight();
 			wfhSD2.setHeight(height);
 			wfhSD2.setWeight(Double.parseDouble(results[i]));
 			weightForHeightGirlsSD2.add(wfhSD2);
+			weightForHeightGirlsSD2Map.put(height, Double.parseDouble(results[i]));
 			i++;
 			
 			WeightForHeight wfhSD3 = new WeightForHeight();
 			wfhSD3.setHeight(height);
 			wfhSD3.setWeight(Double.parseDouble(results[i]));
 			weightForHeightGirlsSD3.add(wfhSD3);
+			weightForHeightGirlsSD3Map.put(height, Double.parseDouble(results[i]));
 			i++;
 		}
 	}
@@ -710,17 +741,19 @@ public class WHOMapping {
 			wfhSD3neg.setHeight(height);
 			wfhSD3neg.setWeight(Double.parseDouble(results[i]));
 			weightForHeightBoysSD3neg.add(wfhSD3neg);
+			weightForHeightBoysSD3negMap.put(height, Double.parseDouble(results[i]));
 			i++;
 			WeightForHeight wfhSD2neg = new WeightForHeight();
 			wfhSD2neg.setHeight(height);
 			wfhSD2neg.setWeight(Double.parseDouble(results[i]));
 			weightForHeightBoysSD2neg.add(wfhSD2neg);
-			
+			weightForHeightBoysSD2negMap.put(height, Double.parseDouble(results[i]));
 			i++;
 			WeightForHeight wfhSD1neg = new WeightForHeight();
 			wfhSD1neg.setHeight(height);
 			wfhSD1neg.setWeight(Double.parseDouble(results[i]));
 			weightForHeightBoysSD1neg.add(wfhSD1neg);
+			weightForHeightBoysSD1negMap.put(height, Double.parseDouble(results[i]));
 			
 			i++;
 			WeightForHeight wfhSD0 = new WeightForHeight();
@@ -734,16 +767,19 @@ public class WHOMapping {
 			wfhSD1.setHeight(height);
 			wfhSD1.setWeight(Double.parseDouble(results[i]));
 			weightForHeightBoysSD1.add(wfhSD1);
+			weightForHeightBoysSD1Map.put(height, Double.parseDouble(results[i]));
 			i++;
 			WeightForHeight wfhSD2 = new WeightForHeight();
 			wfhSD2.setHeight(height);
 			wfhSD2.setWeight(Double.parseDouble(results[i]));
 			weightForHeightBoysSD2.add(wfhSD2);
+			weightForHeightBoysSD2Map.put(height, Double.parseDouble(results[i]));
 			i++;
 			WeightForHeight wfhSD3 = new WeightForHeight();
 			wfhSD3.setHeight(height);
 			wfhSD3.setWeight(Double.parseDouble(results[i]));
 			weightForHeightBoysSD3.add(wfhSD3);
+			weightForHeightBoysSD3Map.put(height, Double.parseDouble(results[i]));
 			i++;
 		}
 	}
@@ -764,18 +800,21 @@ public class WHOMapping {
 			wfhSD3neg.setHeight(length);
 			wfhSD3neg.setWeight(Double.parseDouble(results[i]));
 			weightForLengthBoysSD3neg.add(wfhSD3neg);
+			weightForLengthBoysSD3negMap.put(length, Double.parseDouble(results[i]));
 			
 			i++;
 			WeightForHeight wfhSD2neg = new WeightForHeight();
 			wfhSD2neg.setHeight(length);
 			wfhSD2neg.setWeight(Double.parseDouble(results[i]));
 			weightForLengthBoysSD2neg.add(wfhSD2neg);
+			weightForLengthBoysSD2negMap.put(length, Double.parseDouble(results[i]));
 	
 			i++;
 			WeightForHeight wfhSD1neg = new WeightForHeight();
 			wfhSD1neg.setHeight(length);
 			wfhSD1neg.setWeight(Double.parseDouble(results[i]));
 			weightForLengthBoysSD1neg.add(wfhSD1neg);
+			weightForLengthBoysSD1negMap.put(length, Double.parseDouble(results[i]));
 			
 			i++;
 			WeightForHeight wfhSD0 = new WeightForHeight();
@@ -789,18 +828,21 @@ public class WHOMapping {
 			wfhSD1.setHeight(length);
 			wfhSD1.setWeight(Double.parseDouble(results[i]));
 			weightForLengthBoysSD1.add(wfhSD1);
+			weightForLengthBoysSD1Map.put(length, Double.parseDouble(results[i]));
 			
 			i++;
 			WeightForHeight wfhSD2 = new WeightForHeight();
 			wfhSD2.setHeight(length);
 			wfhSD2.setWeight(Double.parseDouble(results[i]));
 			weightForLengthBoysSD2.add(wfhSD2);
+			weightForLengthBoysSD2Map.put(length, Double.parseDouble(results[i]));
 			
 			i++;
 			WeightForHeight wfhSD3 = new WeightForHeight();
 			wfhSD3.setHeight(length);
 			wfhSD3.setWeight(Double.parseDouble(results[i]));
 			weightForLengthBoysSD3.add(wfhSD3);
+			weightForLengthBoysSD3Map.put(length, Double.parseDouble(results[i]));
 			i++;
 		}
 	}
@@ -821,17 +863,20 @@ public class WHOMapping {
 			wfhSD3neg.setHeight(length);
 			wfhSD3neg.setWeight(Double.parseDouble(results[i]));
 			weightForLengthGirlsSD3neg.add(wfhSD3neg);
+			weightForLengthGirlsSD3negMap.put(length, Double.parseDouble(results[i]));
 			i++;
 			WeightForHeight wfhSD2neg = new WeightForHeight();
 			wfhSD2neg.setHeight(length);
 			wfhSD2neg.setWeight(Double.parseDouble(results[i]));
 			weightForLengthGirlsSD2neg.add(wfhSD2neg);
+			weightForLengthGirlsSD2negMap.put(length, Double.parseDouble(results[i]));
 			
 			i++;
 			WeightForHeight wfhSD1neg = new WeightForHeight();
 			wfhSD1neg.setHeight(length);
 			wfhSD1neg.setWeight(Double.parseDouble(results[i]));
 			weightForLengthGirlsSD1neg.add(wfhSD1neg);
+			weightForLengthGirlsSD1negMap.put(length, Double.parseDouble(results[i]));
 			
 			i++;
 			WeightForHeight wfhSD0 = new WeightForHeight();
@@ -845,6 +890,7 @@ public class WHOMapping {
 			wfhSD1.setHeight(length);
 			wfhSD1.setWeight(Double.parseDouble(results[i]));
 			weightForLengthGirlsSD1.add(wfhSD1);
+			weightForLengthGirlsSD1Map.put(length, Double.parseDouble(results[i]));
 			
 			
 			i++;
@@ -852,12 +898,14 @@ public class WHOMapping {
 			wfhSD2.setHeight(length);
 			wfhSD2.setWeight(Double.parseDouble(results[i]));
 			weightForLengthGirlsSD2.add(wfhSD2);
+			weightForLengthGirlsSD2Map.put(length, Double.parseDouble(results[i]));
 			
 			i++;
 			WeightForHeight wfhSD3 = new WeightForHeight();
 			wfhSD3.setHeight(length);
 			wfhSD3.setWeight(Double.parseDouble(results[i]));
 			weightForLengthGirlsSD3.add(wfhSD3);
+			weightForLengthGirlsSD3Map.put(length, Double.parseDouble(results[i]));
 			i++;
 		}
 	}
@@ -2360,5 +2408,255 @@ public class WHOMapping {
 	
     public void setWeightForLengthGirlsIdeal(Map<Double, Double> weightForLengthGirlsIdeal) {
     	this.weightForLengthGirlsIdeal = weightForLengthGirlsIdeal;
+    }
+
+	
+    public Map<Double, Double> getWeightForHeightGirlsSD3Map() {
+    	return weightForHeightGirlsSD3Map;
+    }
+
+	
+    public void setWeightForHeightGirlsSD3Map(Map<Double, Double> weightForHeightGirlsSD3Map) {
+    	this.weightForHeightGirlsSD3Map = weightForHeightGirlsSD3Map;
+    }
+
+	
+    public Map<Double, Double> getWeightForHeightGirlsSD2Map() {
+    	return weightForHeightGirlsSD2Map;
+    }
+
+	
+    public void setWeightForHeightGirlsSD2Map(Map<Double, Double> weightForHeightGirlsSD2Map) {
+    	this.weightForHeightGirlsSD2Map = weightForHeightGirlsSD2Map;
+    }
+
+	
+    public Map<Double, Double> getWeightForHeightGirlsSD1Map() {
+    	return weightForHeightGirlsSD1Map;
+    }
+
+	
+    public void setWeightForHeightGirlsSD1Map(Map<Double, Double> weightForHeightGirlsSD1Map) {
+    	this.weightForHeightGirlsSD1Map = weightForHeightGirlsSD1Map;
+    }
+
+	
+    public Map<Double, Double> getWeightForHeightGirlsSD0Map() {
+    	return weightForHeightGirlsSD0Map;
+    }
+
+	
+    public void setWeightForHeightGirlsSD0Map(Map<Double, Double> weightForHeightGirlsSD0Map) {
+    	this.weightForHeightGirlsSD0Map = weightForHeightGirlsSD0Map;
+    }
+
+	
+    public Map<Double, Double> getWeightForHeightGirlsSD1negMap() {
+    	return weightForHeightGirlsSD1negMap;
+    }
+
+	
+    public void setWeightForHeightGirlsSD1negMap(Map<Double, Double> weightForHeightGirlsSD1negMap) {
+    	this.weightForHeightGirlsSD1negMap = weightForHeightGirlsSD1negMap;
+    }
+
+	
+    public Map<Double, Double> getWeightForHeightGirlsSD2negMap() {
+    	return weightForHeightGirlsSD2negMap;
+    }
+
+	
+    public void setWeightForHeightGirlsSD2negMap(Map<Double, Double> weightForHeightGirlsSD2negMap) {
+    	this.weightForHeightGirlsSD2negMap = weightForHeightGirlsSD2negMap;
+    }
+
+	
+    public Map<Double, Double> getWeightForHeightGirlsSD3negMap() {
+    	return weightForHeightGirlsSD3negMap;
+    }
+
+	
+    public void setWeightForHeightGirlsSD3negMap(Map<Double, Double> weightForHeightGirlsSD3negMap) {
+    	this.weightForHeightGirlsSD3negMap = weightForHeightGirlsSD3negMap;
+    }
+
+	
+    public Map<Double, Double> getWeightForHeightBoysSD3Map() {
+    	return weightForHeightBoysSD3Map;
+    }
+
+	
+    public void setWeightForHeightBoysSD3Map(Map<Double, Double> weightForHeightBoysSD3Map) {
+    	this.weightForHeightBoysSD3Map = weightForHeightBoysSD3Map;
+    }
+
+	
+    public Map<Double, Double> getWeightForHeightBoysSD2Map() {
+    	return weightForHeightBoysSD2Map;
+    }
+
+	
+    public void setWeightForHeightBoysSD2Map(Map<Double, Double> weightForHeightBoysSD2Map) {
+    	this.weightForHeightBoysSD2Map = weightForHeightBoysSD2Map;
+    }
+
+	
+    public Map<Double, Double> getWeightForHeightBoysSD1Map() {
+    	return weightForHeightBoysSD1Map;
+    }
+
+	
+    public void setWeightForHeightBoysSD1Map(Map<Double, Double> weightForHeightBoysSD1Map) {
+    	this.weightForHeightBoysSD1Map = weightForHeightBoysSD1Map;
+    }
+
+	
+    public Map<Double, Double> getWeightForHeightBoysSD1negMap() {
+    	return weightForHeightBoysSD1negMap;
+    }
+
+	
+    public void setWeightForHeightBoysSD1negMap(Map<Double, Double> weightForHeightBoysSD1negMap) {
+    	this.weightForHeightBoysSD1negMap = weightForHeightBoysSD1negMap;
+    }
+
+	
+    public Map<Double, Double> getWeightForHeightBoysSD2negMap() {
+    	return weightForHeightBoysSD2negMap;
+    }
+
+	
+    public void setWeightForHeightBoysSD2negMap(Map<Double, Double> weightForHeightBoysSD2negMap) {
+    	this.weightForHeightBoysSD2negMap = weightForHeightBoysSD2negMap;
+    }
+
+	
+    public Map<Double, Double> getWeightForHeightBoysSD3negMap() {
+    	return weightForHeightBoysSD3negMap;
+    }
+
+	
+    public void setWeightForHeightBoysSD3negMap(Map<Double, Double> weightForHeightBoysSD3negMap) {
+    	this.weightForHeightBoysSD3negMap = weightForHeightBoysSD3negMap;
+    }
+
+	
+    public Map<Double, Double> getWeightForLengthBoysSD3Map() {
+    	return weightForLengthBoysSD3Map;
+    }
+
+	
+    public void setWeightForLengthBoysSD3Map(Map<Double, Double> weightForLengthBoysSD3Map) {
+    	this.weightForLengthBoysSD3Map = weightForLengthBoysSD3Map;
+    }
+
+	
+    public Map<Double, Double> getWeightForLengthBoysSD2Map() {
+    	return weightForLengthBoysSD2Map;
+    }
+
+	
+    public void setWeightForLengthBoysSD2Map(Map<Double, Double> weightForLengthBoysSD2Map) {
+    	this.weightForLengthBoysSD2Map = weightForLengthBoysSD2Map;
+    }
+
+	
+    public Map<Double, Double> getWeightForLengthBoysSD1Map() {
+    	return weightForLengthBoysSD1Map;
+    }
+
+	
+    public void setWeightForLengthBoysSD1Map(Map<Double, Double> weightForLengthBoysSD1Map) {
+    	this.weightForLengthBoysSD1Map = weightForLengthBoysSD1Map;
+    }
+
+	
+    public Map<Double, Double> getWeightForLengthBoysSD1negMap() {
+    	return weightForLengthBoysSD1negMap;
+    }
+
+	
+    public void setWeightForLengthBoysSD1negMap(Map<Double, Double> weightForLengthBoysSD1negMap) {
+    	this.weightForLengthBoysSD1negMap = weightForLengthBoysSD1negMap;
+    }
+
+	
+    public Map<Double, Double> getWeightForLengthBoysSD2negMap() {
+    	return weightForLengthBoysSD2negMap;
+    }
+
+	
+    public void setWeightForLengthBoysSD2negMap(Map<Double, Double> weightForLengthBoysSD2negMap) {
+    	this.weightForLengthBoysSD2negMap = weightForLengthBoysSD2negMap;
+    }
+
+	
+    public Map<Double, Double> getWeightForLengthBoysSD3negMap() {
+    	return weightForLengthBoysSD3negMap;
+    }
+
+	
+    public void setWeightForLengthBoysSD3negMap(Map<Double, Double> weightForLengthBoysSD3negMap) {
+    	this.weightForLengthBoysSD3negMap = weightForLengthBoysSD3negMap;
+    }
+
+	
+    public Map<Double, Double> getWeightForLengthGirlsSD3Map() {
+    	return weightForLengthGirlsSD3Map;
+    }
+
+	
+    public void setWeightForLengthGirlsSD3Map(Map<Double, Double> weightForLengthGirlsSD3Map) {
+    	this.weightForLengthGirlsSD3Map = weightForLengthGirlsSD3Map;
+    }
+
+	
+    public Map<Double, Double> getWeightForLengthGirlsSD2Map() {
+    	return weightForLengthGirlsSD2Map;
+    }
+
+	
+    public void setWeightForLengthGirlsSD2Map(Map<Double, Double> weightForLengthGirlsSD2Map) {
+    	this.weightForLengthGirlsSD2Map = weightForLengthGirlsSD2Map;
+    }
+
+	
+    public Map<Double, Double> getWeightForLengthGirlsSD1Map() {
+    	return weightForLengthGirlsSD1Map;
+    }
+
+	
+    public void setWeightForLengthGirlsSD1Map(Map<Double, Double> weightForLengthGirlsSD1Map) {
+    	this.weightForLengthGirlsSD1Map = weightForLengthGirlsSD1Map;
+    }
+
+	
+    public Map<Double, Double> getWeightForLengthGirlsSD1negMap() {
+    	return weightForLengthGirlsSD1negMap;
+    }
+
+	
+    public void setWeightForLengthGirlsSD1negMap(Map<Double, Double> weightForLengthGirlsSD1negMap) {
+    	this.weightForLengthGirlsSD1negMap = weightForLengthGirlsSD1negMap;
+    }
+
+	
+    public Map<Double, Double> getWeightForLengthGirlsSD2negMap() {
+    	return weightForLengthGirlsSD2negMap;
+    }
+
+	
+    public void setWeightForLengthGirlsSD2negMap(Map<Double, Double> weightForLengthGirlsSD2negMap) {
+    	this.weightForLengthGirlsSD2negMap = weightForLengthGirlsSD2negMap;
+    }
+
+	
+    public Map<Double, Double> getWeightForLengthGirlsSD3negMap() {
+    	return weightForLengthGirlsSD3negMap;
+    }
+
+	
+    public void setWeightForLengthGirlsSD3negMap(Map<Double, Double> weightForLengthGirlsSD3negMap) {
+    	this.weightForLengthGirlsSD3negMap = weightForLengthGirlsSD3negMap;
     }
 }

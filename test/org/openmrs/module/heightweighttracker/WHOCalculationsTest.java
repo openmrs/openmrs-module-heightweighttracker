@@ -423,4 +423,833 @@ public class WHOCalculationsTest {
 		Double percentile = new Double(whoCalculations.getCalculatedZScoreWeight(weight));
 		Assert.assertTrue(percentile == 3);
 	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAgeOneNeg1() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(2.2));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.72));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == -1);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAgeOneNeg2() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(2.0));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.72));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == -2);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAgeOneNeg3() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(1.85));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.72));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == -3);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAgeOneZero1() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(2.4));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.72));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 0);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAgeOneZero2() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(2.6));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.72));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 0);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAgeOneSD1() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(3));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.72));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 1);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAgeOneSD2() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(3.2));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.72));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 2);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAgeOneSD3() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(3.6));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.72));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 3);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAgeOneIdeal() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(2.58));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.72));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 0);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAge3Ideal() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(7.618));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(67));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 0);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAge3Zero1() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(7.3));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(67));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 0);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAge3neg1() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(6.8));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(67));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == -1);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAge3neg2() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(6));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(67));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == -2);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAge3neg3() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(5));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(67));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == -3);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAge3Zero2() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(8));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(67));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 0);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAge3SD1() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(8.6));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(67));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 1);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAge3SD2() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(9.43));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(67));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 2);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeGirlAge3SD3() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("F");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(10.5));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(67));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 3);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge3SD3() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(9.9));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(65.8));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 3);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge3SD2() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(9.2));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(65.8));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 2);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge3SD1() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(8.4));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(65.8));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 1);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge3Zero2() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(7.7));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(65.8));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 0);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge3Zero1() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(7.2));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(65.8));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 0);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge3Neg1() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(6.7));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(65.8));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == -1);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge3Neg2() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(6.2));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(65.8));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == -2);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge3Neg3() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(5.7));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(65.8));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == -3);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge3Ideal() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years3);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(7.621));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years3);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(65.8));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 0);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge1Ideal() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(2.591));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.9));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 0);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge1Neg3() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(1.88));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.9));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == -3);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge1Neg2() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(2));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.9));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == -2);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge1Neg1() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(2.2));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.9));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == -1);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge1Zero1() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(2.4));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.9));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 0);
+	}
+	
+
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge1Zero2() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(2.6));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.9));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 0);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge1SD1() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(2.9));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.9));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 1);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge1SD2() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(3.2));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.9));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 2);
+	}
+	
+	@Test
+	public void testWeightHeightZScoreRangeBoyAge1SD3() throws Exception {
+		
+		Patient patient = new Patient();
+		patient.setBirthdate(millenium);
+		patient.setGender("M");
+		
+		Obs weight = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		weight.setObsDatetime(years1);
+		weight.setPerson(patient);
+		weight.setValueNumeric(new Double(3.5));
+		
+		Obs height = new Obs();
+		//height.setConcept(Context.getConceptService().getConcept(ConceptDictionary.HEIGHT_CM));
+		height.setObsDatetime(years1);
+		height.setPerson(patient);
+		height.setValueNumeric(new Double(45.9));
+		
+		Double zscore = new Double(whoCalculations.getHeightForWeightZRange(height, weight));
+		Assert.assertTrue(zscore == 3);
+	}
 }

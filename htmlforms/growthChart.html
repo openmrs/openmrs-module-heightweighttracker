@@ -49,7 +49,7 @@
 				</td>
 				<th>Taille /<br/>Height (cm)</th>
 				<td>
-					<obs conceptId="$@HEIGHT_CM@" id="height"/> <span class="lastWeight">Last Weight: <lookup expression="fn.latestObs($@HEIGHT_CM@).valueNumeric"/> Date: <lookup expression="fn.latestObs($@HEIGHT_CM@).obsDatetime"/></span>
+					<obs conceptId="$@HEIGHT_CM@" id="height"/> <span class="lastHeight">Last Weight: <lookup expression="fn.latestObs($@HEIGHT_CM@).valueNumeric"/> Date: <lookup expression="fn.latestObs($@HEIGHT_CM@).obsDatetime"/></span>
 				</td>
 			</tr>
 		</table>
@@ -136,9 +136,7 @@ $j(document).ready(function() {
 	$j('.heightForAge').hide();
 	$j('.weightForAge').hide();
 	$j('.heightWeight').hide();
-	$j('.bmiForAge').hide();
-	$j('.bmi').hide();
-	$j('.lastWeight').hide();
+	$j('.lastHeight').hide();
 	
 	var lastHeight = "<lookup expression="fn.latestObs($@HEIGHT_CM@).valueNumeric"/>";
 	var lastHeightDate = "<lookup expression="fn.latestObs($@HEIGHT_CM@).obsDatetime"/>";
@@ -150,7 +148,7 @@ $j(document).ready(function() {
 	
 	if(months &gt; 228)
 	{
-		$j('.lastWeight').show();
+		$j('.lastHeight').show();
 	}
 	
 	getField('height.value').change(function() {
@@ -2197,7 +2195,7 @@ $j(document).ready(function() {
 	                    -0.595,
 	                    -0.5958];
 	
-	var boyWeightLIdea = [2.441,
+	var boyWeightLIdeal = [2.441,
 	                      2.458,
 	                      2.474,
 	                      2.491,
@@ -2849,7 +2847,7 @@ $j(document).ready(function() {
 	                      18.234,
 	                      18.269];
 	
-	var girlWeightLIdea = [2.461,
+	var girlWeightLIdeal = [2.461,
 	                       2.478,
 	                       2.495,
 	                       2.512,
@@ -3501,7 +3499,7 @@ $j(document).ready(function() {
 	                       18.294,
 	                       18.332];
 	
-	var boyWeightHIdea = [7.433,
+	var boyWeightHIdeal = [7.433,
 	                      7.456,
 	                      7.48,
 	                      7.503,
@@ -4053,7 +4051,7 @@ $j(document).ready(function() {
 	                      22.313,
 	                      22.353];
 	
-	var girlWeightHIdeal = [7.24,
+	var girlWeightHFlal = [7.24,
 	                        7.263,
 	                        7.285,
 	                        7.308,
