@@ -5,7 +5,7 @@
 	
 	<id>heightweighttracker</id>
 	<name>Height Weight tracker</name>
-	<version>0.0.1</version>
+	<version>1.0.0</version>
 	<package>org.openmrs.module.@MODULE_ID@</package>
 	<author>Partners in Health</author>
 	<description>
