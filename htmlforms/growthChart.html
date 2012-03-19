@@ -196,7 +196,7 @@ $j(document).ready(function() {
 			if(months &gt; 60 &amp;&amp; months &lt; 229)
 			{
 				var weight = getValue("weight.value");
-				if(length != null &amp;&amp; weight != null)
+				if(length != null &amp;&amp; length &gt; 0 &amp;&amp; weight != null &amp;&amp; weight &gt; 0)
 				{
 					var bmiAge = calculateZScoreBMI(gender, months, weight, length);
 					
@@ -208,7 +208,7 @@ $j(document).ready(function() {
 			if(months &gt; 228)
 			{
 				var weight = getValue("weight.value");
-				if(length != null &amp;&amp; weight != null)
+				if(length != null &amp;&amp; length &gt; 0 &amp;&amp; weight != null &amp;&amp; weight &gt; 0)
 				{
 					var bmi = calculateBMI(length, weight);
 					
@@ -216,7 +216,7 @@ $j(document).ready(function() {
 					$j('.bmiValue').html(bmi);
 					$j('.bmi').show();
 				}
-				else if (weight != null &amp;&amp; lastHeight != null)
+				else if (lastHeight != null &amp;&amp; lastHeight &gt; 0 &amp;&amp; weight != null &amp;&amp; weight &gt; 0)
 				{
 					var monthsLastHeight = monthDiff(lastHeightDate, birthDate);
 					if(monthsLastHeight &gt; 228)
@@ -252,7 +252,7 @@ $j(document).ready(function() {
 			if(months &lt; 25)
 			{
 				var length = getValue("height.value");
-				if(length != null &amp;&amp; length &gt; 45 &amp;&amp; height &lt; 110)
+				if(length != null &amp;&amp; length &gt; 45 &amp;&amp; length &lt; 110)
 				{
 					var percentage = calculateLengthWeightPercent(gender, length, weight);
 					
@@ -264,7 +264,7 @@ $j(document).ready(function() {
 			if(months &gt; 24 &amp;&amp; months &lt; 61)
 			{
 				var length = getValue("height.value");
-				if(length != null &amp;&amp; length &gt; 65 &amp;&amp; height &lt; 120)
+				if(length != null &amp;&amp; length &gt; 65 &amp;&amp; length &lt; 120)
 				{
 					var percentage = calculateHeightWeightPercent(gender, length, weight);
 					
@@ -276,7 +276,7 @@ $j(document).ready(function() {
 			if(months &gt; 60 &amp;&amp; months &lt; 229)
 			{
 				var length = getValue("height.value");
-				if(length != null &amp;&amp; weight != null)
+				if(length != null &amp;&amp; weight != null &amp;&amp; length &gt; 0 &amp;&amp; weight &gt; 0)
 				{
 					var bmiAge = calculateZScoreBMI(gender, months, weight, length);
 					
@@ -288,7 +288,7 @@ $j(document).ready(function() {
 			if(months &gt; 228)
 			{
 				var length = getValue("height.value");
-				if(length != null &amp;&amp; weight != null)
+				if(length != null &amp;&amp; weight != null &amp;&amp; length &gt; 0 &amp;&amp; weight &gt; 0)
 				{
 					var bmi = calculateBMI(length, weight);
 					
@@ -296,7 +296,7 @@ $j(document).ready(function() {
 					$j('.bmiValue').html(bmi);
 					$j('.bmi').show();
 				}
-				else if (weight != null &amp;&amp; lastHeight != null)
+				else if (weight != null &amp;&amp; lastHeight != null &amp;&amp; length &gt; 0 &amp;&amp; weight &gt; 0)
 				{
 					var monthsLastHeight = monthDiff(lastHeightDate, birthDate);
 					if(monthsLastHeight &gt; 228)
@@ -378,9 +378,9 @@ $j(document).ready(function() {
 			{
 				if(months &lt; 25)
 				{
-					if(length != null &amp;&amp; length &gt; 45 &amp;&amp; height &lt; 110)
+					if(length != null &amp;&amp; length &gt; 45 &amp;&amp; length &lt; 110)
 					{
-						var percentage = calculateLengthWeightPercent(gender, height, weight);
+						var percentage = calculateLengthWeightPercent(gender, length, weight);
 						
 						setValue('heightWeightPercent.value', percentage);
 						$j('.heightWeightPercentage').html(percentage);
@@ -389,9 +389,9 @@ $j(document).ready(function() {
 				}
 				if(months &gt; 24 &amp;&amp; months &lt; 61)
 				{
-					if(length != null &amp;&amp; length &gt; 65 &amp;&amp; height &lt; 120)
+					if(length != null &amp;&amp; length &gt; 65 &amp;&amp; length &lt; 120)
 					{
-						var percentage = calculateHeightWeightPercent(gender, height, weight);
+						var percentage = calculateHeightWeightPercent(gender, length, weight);
 						
 						setValue('heightWeightPercent.value', percentage);
 						$j('.heightWeightPercentage').html(percentage);
@@ -400,7 +400,7 @@ $j(document).ready(function() {
 				}
 				if(months &gt; 60 &amp;&amp; months &lt; 229)
 				{
-					if(length != null &amp;&amp; weight != null)
+					if(length != null &amp;&amp; weight != null &amp;&amp; length &gt; 0 &amp;&amp; weight &gt; 0)
 					{
 						var bmiAge = calculateZScoreBMI(gender, months, weight, length);
 						

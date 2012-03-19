@@ -1,5 +1,6 @@
 package org.openmrs.module.heightweighttracker.mapper;
 
+import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -144,14 +145,17 @@ public class VisitGroup {
 		return whoCalculations.getCalculatedBmiForAge(height, weight);
 	}
 	
-	public Double getCalculatedBmi()
+	public String getCalculatedBmi()
 	{
 		Obs weight = getWeight();
 		Obs height = getHeight();
 		
 		if(weight != null && height != null && weight.getValueNumeric() != null && height.getValueNumeric() != null && weight.getPerson().getAge(getDate()) > 20)
 		{
-			return  weight.getValueNumeric() / (height.getValueNumeric()/100 * height.getValueNumeric()/100);
+			Double bmi =  weight.getValueNumeric() / (height.getValueNumeric()/100 * height.getValueNumeric()/100);
+			
+			DecimalFormat twoDigit = new DecimalFormat("#,##0");//formats to 2
+			twoDigit.format(bmi);
 		}
 		return null;
 	}

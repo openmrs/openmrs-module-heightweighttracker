@@ -18,28 +18,31 @@ public class WHOCalculations {
 		if(height != null && height.getValueNumeric() != null && height.getPerson().getAge(height.getObsDatetime()) < 20)
 		{
 			int ageMonths = calculateMonthsDifference(height.getPerson().getBirthdate(), height.getObsDatetime());
+			if(ageMonths >= 0)
+			{
 			
-			if(height.getPerson().getGender().equals("F") && ageMonths < 61)
-			{
-				zscore = calculateZScore(height.getValueNumeric(), whoMapping.getHeightForAgeFromBirthGirlsMean().get(ageMonths), whoMapping.getHeightForAgeFromBirthGirlsSD().get(ageMonths)); 
-			}
-			else if(height.getPerson().getGender().equals("M") && ageMonths < 61)
-			{
-				zscore = calculateZScore(height.getValueNumeric(), whoMapping.getHeightForAgeFromBirthBoysMean().get(ageMonths), whoMapping.getHeightForAgeFromBirthBoysSD().get(ageMonths)); 
-			}
-			else if(height.getPerson().getGender().equals("F") && ageMonths < 229)
-			{
-				zscore = calculateZScore(height.getValueNumeric(), whoMapping.getHeightForAge5to19GirlsMean().get(ageMonths), whoMapping.getHeightForAge5to19GirlsSD().get(ageMonths)); 
-			}
-			else if(height.getPerson().getGender().equals("M") && ageMonths < 229)
-			{
-				zscore = calculateZScore(height.getValueNumeric(), whoMapping.getHeightForAge5to19BoysMean().get(ageMonths), whoMapping.getHeightForAge5to19BoysSD().get(ageMonths)); 
-			}
-			
-			if(zscore != null)
-			{
-				DecimalFormat twoDigit = new DecimalFormat("#,##0.00");//formats to 2
-				return  twoDigit.format(zscore);
+				if(height.getPerson().getGender().equals("F") && ageMonths < 61)
+				{
+					zscore = calculateZScore(height.getValueNumeric(), whoMapping.getHeightForAgeFromBirthGirlsMean().get(ageMonths), whoMapping.getHeightForAgeFromBirthGirlsSD().get(ageMonths)); 
+				}
+				else if(height.getPerson().getGender().equals("M") && ageMonths < 61)
+				{
+					zscore = calculateZScore(height.getValueNumeric(), whoMapping.getHeightForAgeFromBirthBoysMean().get(ageMonths), whoMapping.getHeightForAgeFromBirthBoysSD().get(ageMonths)); 
+				}
+				else if(height.getPerson().getGender().equals("F") && ageMonths < 229)
+				{
+					zscore = calculateZScore(height.getValueNumeric(), whoMapping.getHeightForAge5to19GirlsMean().get(ageMonths), whoMapping.getHeightForAge5to19GirlsSD().get(ageMonths)); 
+				}
+				else if(height.getPerson().getGender().equals("M") && ageMonths < 229)
+				{
+					zscore = calculateZScore(height.getValueNumeric(), whoMapping.getHeightForAge5to19BoysMean().get(ageMonths), whoMapping.getHeightForAge5to19BoysSD().get(ageMonths)); 
+				}
+				
+				if(zscore != null)
+				{
+					DecimalFormat twoDigit = new DecimalFormat("#,##0.00");//formats to 2
+					return  twoDigit.format(zscore);
+				}
 			}
 			
 		}
@@ -66,28 +69,31 @@ public class WHOCalculations {
 		if(weight != null && weight.getValueNumeric() != null && weight.getPerson().getAge(weight.getObsDatetime()) < 11)
 		{
 			int ageMonths = calculateMonthsDifference(weight.getPerson().getBirthdate(), weight.getObsDatetime());
+			if(ageMonths >= 0)
+			{
 			
-			if(weight.getPerson().getGender().equals("F") && ageMonths < 61)
-			{
-				zscore = calculateZScore(weight.getValueNumeric(), whoMapping.getWeightForAgeFromBirthGirlsMean().get(ageMonths), whoMapping.getWeightForAgeFromBirthGirlsL().get(ageMonths), whoMapping.getWeightForAgeFromBirthGirlsS().get(ageMonths)); 
-			}
-			else if(weight.getPerson().getGender().equals("M") && ageMonths < 61)
-			{
-				zscore = calculateZScore(weight.getValueNumeric(), whoMapping.getWeightForAgeFromBirthBoysMean().get(ageMonths), whoMapping.getWeightForAgeFromBirthBoysL().get(ageMonths), whoMapping.getWeightForAgeFromBirthBoysS().get(ageMonths)); 
-			}
-			else if(weight.getPerson().getGender().equals("F") && ageMonths < 121)
-			{
-				zscore = calculateZScore(weight.getValueNumeric(), whoMapping.getWeightForAge5to10GirlsMean().get(ageMonths), whoMapping.getWeightForAge5to10GirlsL().get(ageMonths), whoMapping.getWeightForAge5to10GirlsS().get(ageMonths)); 
-			}
-			else if(weight.getPerson().getGender().equals("M") && ageMonths < 121)
-			{
-				zscore = calculateZScore(weight.getValueNumeric(), whoMapping.getWeightForAge5to10BoysMean().get(ageMonths), whoMapping.getWeightForAge5to10BoysL().get(ageMonths), whoMapping.getWeightForAge5to10BoysS().get(ageMonths)); 
-			}
-			
-			if(zscore != null)
-			{
-				DecimalFormat twoDigit = new DecimalFormat("#,##0.00");//formats to 2
-				return  twoDigit.format(zscore);
+				if(weight.getPerson().getGender().equals("F") && ageMonths < 61)
+				{
+					zscore = calculateZScore(weight.getValueNumeric(), whoMapping.getWeightForAgeFromBirthGirlsMean().get(ageMonths), whoMapping.getWeightForAgeFromBirthGirlsL().get(ageMonths), whoMapping.getWeightForAgeFromBirthGirlsS().get(ageMonths)); 
+				}
+				else if(weight.getPerson().getGender().equals("M") && ageMonths < 61)
+				{
+					zscore = calculateZScore(weight.getValueNumeric(), whoMapping.getWeightForAgeFromBirthBoysMean().get(ageMonths), whoMapping.getWeightForAgeFromBirthBoysL().get(ageMonths), whoMapping.getWeightForAgeFromBirthBoysS().get(ageMonths)); 
+				}
+				else if(weight.getPerson().getGender().equals("F") && ageMonths < 121)
+				{
+					zscore = calculateZScore(weight.getValueNumeric(), whoMapping.getWeightForAge5to10GirlsMean().get(ageMonths), whoMapping.getWeightForAge5to10GirlsL().get(ageMonths), whoMapping.getWeightForAge5to10GirlsS().get(ageMonths)); 
+				}
+				else if(weight.getPerson().getGender().equals("M") && ageMonths < 121)
+				{
+					zscore = calculateZScore(weight.getValueNumeric(), whoMapping.getWeightForAge5to10BoysMean().get(ageMonths), whoMapping.getWeightForAge5to10BoysL().get(ageMonths), whoMapping.getWeightForAge5to10BoysS().get(ageMonths)); 
+				}
+				
+				if(zscore != null)
+				{
+					DecimalFormat twoDigit = new DecimalFormat("#,##0.00");//formats to 2
+					return  twoDigit.format(zscore);
+				}
 			}
 			
 		}
@@ -146,25 +152,27 @@ public class WHOCalculations {
 		{
 			String range = null;
 			int ageMonths = calculateMonthsDifference(weight.getPerson().getBirthdate(), weight.getObsDatetime());
-			
-			DecimalFormat oneDigit = new DecimalFormat("#,##0.0");
-			Double idealToLookFor = Double.parseDouble(oneDigit.format(height.getValueNumeric()));
-			
-			if(weight.getPerson().getGender().equals("F") && ageMonths < 25)
+			if(ageMonths >= 0)
 			{
-				range = getHeightForWeightZRange(weight.getValueNumeric(), whoMapping.getWeightForLengthGirlsSD3negMap().get(idealToLookFor), whoMapping.getWeightForLengthGirlsSD2negMap().get(idealToLookFor), whoMapping.getWeightForLengthGirlsSD1negMap().get(idealToLookFor), whoMapping.getWeightForLengthGirlsIdeal().get(idealToLookFor), whoMapping.getWeightForLengthGirlsSD1Map().get(idealToLookFor), whoMapping.getWeightForLengthGirlsSD2Map().get(idealToLookFor), whoMapping.getWeightForLengthGirlsSD3Map().get(idealToLookFor));
-			}	
-			else if(weight.getPerson().getGender().equals("M") && ageMonths < 25)
-			{
-				range = getHeightForWeightZRange(weight.getValueNumeric(), whoMapping.getWeightForLengthBoysSD3negMap().get(idealToLookFor), whoMapping.getWeightForLengthBoysSD2negMap().get(idealToLookFor), whoMapping.getWeightForLengthBoysSD1negMap().get(idealToLookFor), whoMapping.getWeightForLengthBoysIdeal().get(idealToLookFor), whoMapping.getWeightForLengthBoysSD1Map().get(idealToLookFor), whoMapping.getWeightForLengthBoysSD2Map().get(idealToLookFor), whoMapping.getWeightForLengthBoysSD3Map().get(idealToLookFor));
-			}	
-			else if(height.getPerson().getGender().equals("F") && ageMonths < 61)
-			{
-				range = getHeightForWeightZRange(weight.getValueNumeric(), whoMapping.getWeightForHeightGirlsSD3negMap().get(idealToLookFor), whoMapping.getWeightForHeightGirlsSD2negMap().get(idealToLookFor), whoMapping.getWeightForHeightGirlsSD1negMap().get(idealToLookFor), whoMapping.getWeightForHeightGirlsIdeal().get(idealToLookFor), whoMapping.getWeightForHeightGirlsSD1Map().get(idealToLookFor), whoMapping.getWeightForHeightGirlsSD2Map().get(idealToLookFor), whoMapping.getWeightForHeightGirlsSD3Map().get(idealToLookFor));
-			}
-			else if(height.getPerson().getGender().equals("M") && ageMonths < 61)
-			{
-				range = getHeightForWeightZRange(weight.getValueNumeric(), whoMapping.getWeightForHeightBoysSD3negMap().get(idealToLookFor), whoMapping.getWeightForHeightBoysSD2negMap().get(idealToLookFor), whoMapping.getWeightForHeightBoysSD1negMap().get(idealToLookFor), whoMapping.getWeightForHeightBoysIdeal().get(idealToLookFor), whoMapping.getWeightForHeightBoysSD1Map().get(idealToLookFor), whoMapping.getWeightForHeightBoysSD2Map().get(idealToLookFor), whoMapping.getWeightForHeightBoysSD3Map().get(idealToLookFor));
+				DecimalFormat oneDigit = new DecimalFormat("#,##0.0");
+				Double idealToLookFor = Double.parseDouble(oneDigit.format(height.getValueNumeric()));
+				
+				if(weight.getPerson().getGender().equals("F") && ageMonths < 25 && idealToLookFor < 111 && idealToLookFor > 44)
+				{
+					range = getHeightForWeightZRange(weight.getValueNumeric(), whoMapping.getWeightForLengthGirlsSD3negMap().get(idealToLookFor), whoMapping.getWeightForLengthGirlsSD2negMap().get(idealToLookFor), whoMapping.getWeightForLengthGirlsSD1negMap().get(idealToLookFor), whoMapping.getWeightForLengthGirlsIdeal().get(idealToLookFor), whoMapping.getWeightForLengthGirlsSD1Map().get(idealToLookFor), whoMapping.getWeightForLengthGirlsSD2Map().get(idealToLookFor), whoMapping.getWeightForLengthGirlsSD3Map().get(idealToLookFor));
+				}	
+				else if(weight.getPerson().getGender().equals("M") && ageMonths < 25 && idealToLookFor < 111 && idealToLookFor > 44)
+				{
+					range = getHeightForWeightZRange(weight.getValueNumeric(), whoMapping.getWeightForLengthBoysSD3negMap().get(idealToLookFor), whoMapping.getWeightForLengthBoysSD2negMap().get(idealToLookFor), whoMapping.getWeightForLengthBoysSD1negMap().get(idealToLookFor), whoMapping.getWeightForLengthBoysIdeal().get(idealToLookFor), whoMapping.getWeightForLengthBoysSD1Map().get(idealToLookFor), whoMapping.getWeightForLengthBoysSD2Map().get(idealToLookFor), whoMapping.getWeightForLengthBoysSD3Map().get(idealToLookFor));
+				}	
+				else if(height.getPerson().getGender().equals("F") && ageMonths < 61 && idealToLookFor < 121 && idealToLookFor > 64)
+				{
+					range = getHeightForWeightZRange(weight.getValueNumeric(), whoMapping.getWeightForHeightGirlsSD3negMap().get(idealToLookFor), whoMapping.getWeightForHeightGirlsSD2negMap().get(idealToLookFor), whoMapping.getWeightForHeightGirlsSD1negMap().get(idealToLookFor), whoMapping.getWeightForHeightGirlsIdeal().get(idealToLookFor), whoMapping.getWeightForHeightGirlsSD1Map().get(idealToLookFor), whoMapping.getWeightForHeightGirlsSD2Map().get(idealToLookFor), whoMapping.getWeightForHeightGirlsSD3Map().get(idealToLookFor));
+				}
+				else if(height.getPerson().getGender().equals("M") && ageMonths < 61 && idealToLookFor < 121 && idealToLookFor > 64)
+				{
+					range = getHeightForWeightZRange(weight.getValueNumeric(), whoMapping.getWeightForHeightBoysSD3negMap().get(idealToLookFor), whoMapping.getWeightForHeightBoysSD2negMap().get(idealToLookFor), whoMapping.getWeightForHeightBoysSD1negMap().get(idealToLookFor), whoMapping.getWeightForHeightBoysIdeal().get(idealToLookFor), whoMapping.getWeightForHeightBoysSD1Map().get(idealToLookFor), whoMapping.getWeightForHeightBoysSD2Map().get(idealToLookFor), whoMapping.getWeightForHeightBoysSD3Map().get(idealToLookFor));
+				}
 			}
 				
 			
@@ -182,30 +190,33 @@ public class WHOCalculations {
 		{
 			int ageMonths = calculateMonthsDifference(weight.getPerson().getBirthdate(), weight.getObsDatetime());
 			
-			DecimalFormat oneDigit = new DecimalFormat("#,##0.0");
-			Double idealToLookFor = Double.parseDouble(oneDigit.format(height.getValueNumeric()));
-			
-			if(weight.getPerson().getGender().equals("F") && ageMonths < 25)
+			if(ageMonths >= 0)
 			{
-				percentage = calculatePercentage(weight.getValueNumeric(), whoMapping.getWeightForLengthGirlsIdeal().get(idealToLookFor));
-			}
-			else if(weight.getPerson().getGender().equals("M") && ageMonths < 25)
-			{
-				percentage = calculatePercentage(weight.getValueNumeric(), whoMapping.getWeightForLengthBoysIdeal().get(idealToLookFor));
-			}
-			else if(height.getPerson().getGender().equals("F") && ageMonths < 61)
-			{
-				percentage = calculatePercentage(weight.getValueNumeric(), whoMapping.getWeightForHeightGirlsIdeal().get(idealToLookFor));
-			}
-			else if(height.getPerson().getGender().equals("M") && ageMonths < 61)
-			{
-				percentage = calculatePercentage(weight.getValueNumeric(), whoMapping.getWeightForHeightBoysIdeal().get(idealToLookFor));
-			}
-			
-			if(percentage != null)
-			{
-				DecimalFormat twoDigit = new DecimalFormat("#,##0");//formats to 2
-				return  twoDigit.format(percentage);
+				DecimalFormat oneDigit = new DecimalFormat("#,##0.0");
+				Double idealToLookFor = Double.parseDouble(oneDigit.format(height.getValueNumeric()));
+				
+				if(weight.getPerson().getGender().equals("F") && ageMonths < 25 && idealToLookFor < 111 && idealToLookFor > 44)
+				{
+					percentage = calculatePercentage(weight.getValueNumeric(), whoMapping.getWeightForLengthGirlsIdeal().get(idealToLookFor));
+				}
+				else if(weight.getPerson().getGender().equals("M") && ageMonths < 25 && idealToLookFor < 111 && idealToLookFor > 44)
+				{
+					percentage = calculatePercentage(weight.getValueNumeric(), whoMapping.getWeightForLengthBoysIdeal().get(idealToLookFor));
+				}
+				else if(height.getPerson().getGender().equals("F") && ageMonths < 61 && idealToLookFor < 121 && idealToLookFor > 64)
+				{
+					percentage = calculatePercentage(weight.getValueNumeric(), whoMapping.getWeightForHeightGirlsIdeal().get(idealToLookFor));
+				}
+				else if(height.getPerson().getGender().equals("M") && ageMonths < 61 && idealToLookFor < 121 && idealToLookFor > 64)
+				{
+					percentage = calculatePercentage(weight.getValueNumeric(), whoMapping.getWeightForHeightBoysIdeal().get(idealToLookFor));
+				}
+				
+				if(percentage != null)
+				{
+					DecimalFormat twoDigit = new DecimalFormat("#,##0");//formats to 2
+					return  twoDigit.format(percentage);
+				}
 			}
 		}
 		

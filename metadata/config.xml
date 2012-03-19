@@ -27,16 +27,15 @@
 	<globalProperty>
 		<property>heightweighttracker.constants</property>
 		<defaultValue>
-HEIGHT_CM = 3ce93cf2-26fe-102b-80cb-0017a47871b2
 WEIGHT_KG = 3ce93b62-26fe-102b-80cb-0017a47871b2
 Z_SCORE_WEIGHT = c9d8c9db-518c-4a00-985d-d2fc8ac1f739
 Z_SCORE_HEIGHT = 6d4b1720-f45c-4069-98d9-e7e865105a7a
 Z_SCORE_BMI = b373b84e-f089-40d2-90cb-f730b761498b
 HEIGHT_WEIGHT_PERCENTILE = 2438e295-d9da-4d5c-bacc-13c313e34755
-GROWTH_ENCOUNTER = d7147b46-3e05-47dd-93b5-5981f411b34b
+GROWTH_ENCOUNTER = daf32375-d293-4e27-a68d-2a58494c96e1
 BMI = 3ce14da8-26fe-102b-80cb-0017a47871b2
 PatientIdentiferId_IMB = c147b1de-2700-102b-80cb-0017a47871b2
-PatientIdentiferId_PC = 22a3811b-43ff-4c06-8ca0-c4b47d35df8e
+PatientIdentiferId_PC = 4e458867-9a68-4e55-9fe0-fb49fac4e6b0
 </defaultValue>
 		<description>
 			paste in a properties text file containing key, and local ID for objects.  For more explanation,
@@ -45,14 +44,14 @@ PatientIdentiferId_PC = 22a3811b-43ff-4c06-8ca0-c4b47d35df8e
 	</globalProperty>
 	<globalProperty>
 		<property>heightweighttracker.Form_New</property>
-		<defaultValue>ab35557d-b558-4c19-90d4-dbde7260c5b8</defaultValue>
+		<defaultValue>a66ffe09-e57c-4fea-9ca1-d13b2c0e002a</defaultValue>
 		<description>
 			form ID for new visits
 		</description>
 	</globalProperty>
 	<globalProperty>
 		<property>heightweighttracker.DisplayLink</property>
-		<defaultValue>true</defaultValue>
+		<defaultValue>false</defaultValue>
 		<description>
 			If true the link will be displayed on the patient dashboard
 		</description>

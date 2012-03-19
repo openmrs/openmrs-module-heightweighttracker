@@ -919,7 +919,7 @@
 			<thead>
 				<tr>
 					<th class="section-emr">EMR</th>
-					<th scope="col" class="view-row">View</th>
+					<th scope="col" class="view-row">View/Edit</th>
 					<th>Date de mesures</th>
 					<th>Age</th>
 					<th>Poids</th>
@@ -1401,7 +1401,7 @@
 			</c:if>
 		</h1>
 		<hr />
-		<b>5 to 15 years(z-scores)</b>
+		<b>5 up to 15 years(z-scores)</b>
 		<table class="section-graph">
 			<tbody>
 				<tr>
@@ -1434,7 +1434,7 @@
 			</c:if>
 		</h1>
 		<hr />
-		<b>5 to 19 years(z-scores)</b>
+		<b>5 up to 19 years(z-scores)</b>
 		<table class="section-graph">
 			<tbody>
 				<tr>
@@ -1467,7 +1467,7 @@
 			</c:if>
 		</h1>
 		<hr />
-		<b>5 to 10 years(z-scores)</b>
+		<b>5 up to 10 years(z-scores)</b>
 		<table class="section-graph">
 			<tbody>
 				<tr>
@@ -1500,7 +1500,7 @@
 			</c:if>
 		</h1>
 		<hr />
-		<b>2 to 5 years(z-scores)</b>
+		<b>2 up to 5 years(z-scores)</b>
 		<table class="section-graph">
 			<tbody>
 				<tr>
@@ -1533,7 +1533,7 @@
 			</c:if>
 		</h1>
 		<hr />
-		<b>0 to 2 years(z-scores)</b>
+		<b>0 up to 2 years(z-scores)</b>
 		<table class="section-graph">
 			<tbody>
 				<tr>
@@ -1566,7 +1566,7 @@
 			</c:if>
 		</h1>
 		<hr />
-		<b>Birth to 5 years(z-scores)</b>
+		<b>Birth up to 5 years(z-scores)</b>
 		<table class="section-graph">
 			<tbody>
 				<tr>
@@ -1599,7 +1599,7 @@
 			</c:if>
 		</h1>
 		<hr />
-		<b>Birth to 5 years(z-scores)</b>
+		<b>Birth up to 5 years(z-scores)</b>
 		<table class="section-graph">
 			<tbody>
 				<tr>
