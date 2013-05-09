@@ -9,4 +9,4 @@
 <%@ taglib prefix="fn" uri="/WEB-INF/taglibs/fn.tld" %>
 
 <%@ taglib prefix="ui" tagdir="/WEB-INF/tags/module/ui/springmvc" %>
-<%@ taglib prefix="ui-taglib" uri="/WEB-INF/view/module/ui/springmvc/resources/ui.tld" %>
+<%-- <%@ taglib prefix="ui-taglib" uri="/WEB-INF/view/module/ui/springmvc/resources/ui.tld" %> --%>
