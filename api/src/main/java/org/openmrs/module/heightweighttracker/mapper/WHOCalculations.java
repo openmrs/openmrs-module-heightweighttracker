@@ -31,7 +31,12 @@ public class WHOCalculations {
 				}
 				else if(height.getPerson().getGender().equals("F") && ageMonths < 229)
 				{
+					try{
 					zscore = calculateZScore(height.getValueNumeric(), whoMapping.getHeightForAge5to19GirlsMean().get(ageMonths), whoMapping.getHeightForAge5to19GirlsSD().get(ageMonths)); 
+				 }
+					catch(NullPointerException e){
+						e.printStackTrace();
+					}
 				}
 				else if(height.getPerson().getGender().equals("M") && ageMonths < 229)
 				{
