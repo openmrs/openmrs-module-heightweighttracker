@@ -4,7 +4,7 @@
 
 	<groupId>org.openmrs.module</groupId>
 	<artifactId>heightweighttracker</artifactId>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.0.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Height Weight tracker</name>
 	<description>Parent project for Height Weight tracker</description>
