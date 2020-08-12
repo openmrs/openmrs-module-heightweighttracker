@@ -1,4 +1,4 @@
-package org.openmrs.module.heightweighttracker.extension.html;
+package org.openmrs.module.heightweighttracker.web.extension;
 
 import org.openmrs.api.context.Context;
 import org.openmrs.module.heightweighttracker.MetadataHelper;

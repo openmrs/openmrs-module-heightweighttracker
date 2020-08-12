@@ -15,7 +15,8 @@
 	<require_version>${openMRSVersion}</require_version>
 
 	<require_modules>
-	   		<require_module>org.openmrs.module.htmlformentry</require_module>
+		<require_module>org.openmrs.module.htmlformentry</require_module>
+		<require_module>org.openmrs.module.reportingcompatibility</require_module>
 	</require_modules>
 
 	<aware_of_modules>
@@ -24,7 +25,7 @@
 
 	 <extension>
 		<point>org.openmrs.patientDashboard.patientSummary</point>
-		<class>@MODULE_PACKAGE@.extension.html.HeightWeightTrackerFormItem</class>
+		<class>org.openmrs.module.heightweighttracker.web.extension.HeightWeightTrackerFormItem</class>
 	</extension>
 	
 	<globalProperty>
