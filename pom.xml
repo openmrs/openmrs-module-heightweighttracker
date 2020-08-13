@@ -27,7 +27,7 @@
 		<legacyuiVersion>1.7.0-SNAPSHOT</legacyuiVersion>
 		<reportingcompatibilityVersion>2.0.7-SNAPSHOT</reportingcompatibilityVersion>
 		<MODULE_ID>${project.parent.artifactId}</MODULE_ID>
-		<MODULE_NAME>${project.name}</MODULE_NAME>
+		<MODULE_NAME>Height Weight Tracker</MODULE_NAME>
 		<MODULE_VERSION>${project.parent.version}</MODULE_VERSION>
 		<MODULE_PACKAGE>${project.parent.groupId}.${project.parent.artifactId}</MODULE_PACKAGE>
 	</properties>
