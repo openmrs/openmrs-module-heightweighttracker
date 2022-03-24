@@ -25,8 +25,8 @@
 
 	<properties>
 		<openMRSVersion>2.3.1</openMRSVersion>
-		<legacyuiVersion>1.7.0-SNAPSHOT</legacyuiVersion>
-		<reportingcompatibilityVersion>2.0.7-SNAPSHOT</reportingcompatibilityVersion>
+		<legacyuiVersion>1.10.0</legacyuiVersion>
+		<reportingcompatibilityVersion>2.0.8</reportingcompatibilityVersion>
 		<MODULE_ID>${project.parent.artifactId}</MODULE_ID>
 		<MODULE_NAME>Height Weight Tracker</MODULE_NAME>
 		<MODULE_VERSION>${project.parent.version}</MODULE_VERSION>
